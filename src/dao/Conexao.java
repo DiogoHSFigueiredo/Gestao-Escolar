@@ -23,7 +23,7 @@ public class Conexao {
     // variavel com o usuario
     private final String usuario = "root";
 // variavel com a senha
-    private final String senha = "senhabanco2023@";
+    private final String senha = "senhaB2023@";
 // variaveis para trabalhar a conexao
     private Connection conexao = null;
     public Statement stmt;

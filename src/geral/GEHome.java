@@ -91,7 +91,7 @@ public class GEHome extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         txtNome2 = new javax.swing.JTextField();
-        txtId2 = new javax.swing.JTextField();
+        txtIdCad = new javax.swing.JTextField();
         txtPai2 = new javax.swing.JTextField();
         txtMae2 = new javax.swing.JTextField();
         txtIdade2 = new javax.swing.JTextField();
@@ -311,14 +311,14 @@ public class GEHome extends javax.swing.JFrame {
         });
         PainelCadatro.add(txtNome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 270, -1));
 
-        txtId2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtId2.setAlignmentX(2.0F);
-        txtId2.addActionListener(new java.awt.event.ActionListener() {
+        txtIdCad.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtIdCad.setAlignmentX(2.0F);
+        txtIdCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtId2ActionPerformed(evt);
+                txtIdCadActionPerformed(evt);
             }
         });
-        PainelCadatro.add(txtId2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 50, -1));
+        PainelCadatro.add(txtIdCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 50, -1));
 
         txtPai2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtPai2.setAlignmentX(2.0F);
@@ -533,9 +533,9 @@ public class GEHome extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNome2ActionPerformed
 
-    private void txtId2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtId2ActionPerformed
+    private void txtIdCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdCadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtId2ActionPerformed
+    }//GEN-LAST:event_txtIdCadActionPerformed
 
     private void txtEmail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmail2ActionPerformed
         // TODO add your handling code here:
@@ -587,7 +587,7 @@ public class GEHome extends javax.swing.JFrame {
 
     private void btnNovoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoCadastroActionPerformed
         txtNomes1.setText("");
-        txtId2.setText("");
+        txtIdCad.setText("");
         txtNome2.setText("");
         txtIdade2.setText("");
         txtPai2.setText("");
@@ -615,7 +615,7 @@ public class GEHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGravarNovoCadastroMouseClicked
 
     private void PainelMasterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PainelMasterMouseClicked
-     
+
     }//GEN-LAST:event_PainelMasterMouseClicked
 
     private void btnGravarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarCadastroActionPerformed
@@ -623,7 +623,15 @@ public class GEHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGravarCadastroActionPerformed
 
     private void btnExcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCadastroActionPerformed
-        // TODO add your handling code here:
+
+        /* conectar.executaSql("delete from `bancoge`.`pessoasge` WHERE (`id` = '" + Integer.parseInt(txtIdCad.getText()) + "')");
+       
+        
+        melhorar este metodo de exclusao de cadastro.
+        
+        
+        */
+
     }//GEN-LAST:event_btnExcluirCadastroActionPerformed
 
     /**
@@ -714,7 +722,7 @@ public class GEHome extends javax.swing.JFrame {
     private javax.swing.JTextField txtEscola;
     private javax.swing.JTextField txtEscola2;
     private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtId2;
+    private javax.swing.JTextField txtIdCad;
     private javax.swing.JTextField txtIdade;
     private javax.swing.JTextField txtIdade2;
     private javax.swing.JTextField txtMae;
@@ -803,7 +811,7 @@ public class GEHome extends javax.swing.JFrame {
             String nome = conectar.rs.getString("nome");
             if (nome.equals(linha)) {
 
-                txtId2.setText(conectar.rs.getString("id"));
+                txtIdCad.setText(conectar.rs.getString("id"));
                 txtNome2.setText(conectar.rs.getString("nome"));
                 txtIdade2.setText(conectar.rs.getString("idade"));
                 txtPai2.setText(conectar.rs.getString("pai"));
@@ -872,7 +880,5 @@ public class GEHome extends javax.swing.JFrame {
                 p.Dezembro(),});
         }
     }
-
-
 
 }
