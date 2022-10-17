@@ -109,8 +109,8 @@ public class GEHome extends javax.swing.JFrame {
         txtCpfPai2 = new javax.swing.JTextField();
         btnNovoCadastro = new javax.swing.JToggleButton();
         btnGravarNovoCadastro = new javax.swing.JToggleButton();
-        enviarEmail4 = new javax.swing.JToggleButton();
-        enviarEmail5 = new javax.swing.JToggleButton();
+        btnExcluirCadastro = new javax.swing.JToggleButton();
+        btnGravarCadastro = new javax.swing.JToggleButton();
         listaNomes1 = new javax.swing.JList<>();
         txtNomes1 = new javax.swing.JTextField();
 
@@ -410,18 +410,23 @@ public class GEHome extends javax.swing.JFrame {
         });
         PainelCadatro.add(btnGravarNovoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, 230, 80));
 
-        enviarEmail4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        enviarEmail4.setText("Excluir Cadastro");
-        PainelCadatro.add(enviarEmail4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 200, 50));
-
-        enviarEmail5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        enviarEmail5.setText("Gravar Alterações");
-        enviarEmail5.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluirCadastro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnExcluirCadastro.setText("Excluir Cadastro");
+        btnExcluirCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enviarEmail5ActionPerformed(evt);
+                btnExcluirCadastroActionPerformed(evt);
             }
         });
-        PainelCadatro.add(enviarEmail5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 200, 50));
+        PainelCadatro.add(btnExcluirCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 200, 50));
+
+        btnGravarCadastro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnGravarCadastro.setText("Gravar Alterações");
+        btnGravarCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGravarCadastroActionPerformed(evt);
+            }
+        });
+        PainelCadatro.add(btnGravarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 200, 50));
 
         listaNomes1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -613,9 +618,13 @@ public class GEHome extends javax.swing.JFrame {
      
     }//GEN-LAST:event_PainelMasterMouseClicked
 
-    private void enviarEmail5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarEmail5ActionPerformed
+    private void btnGravarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarCadastroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enviarEmail5ActionPerformed
+    }//GEN-LAST:event_btnGravarCadastroActionPerformed
+
+    private void btnExcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCadastroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluirCadastroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -659,11 +668,11 @@ public class GEHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PainelCadatro;
     private javax.swing.JTabbedPane PainelMaster;
+    private javax.swing.JToggleButton btnExcluirCadastro;
+    private javax.swing.JToggleButton btnGravarCadastro;
     private javax.swing.JToggleButton btnGravarNovoCadastro;
     private javax.swing.JToggleButton btnNovoCadastro;
     private javax.swing.JToggleButton enviarEmail;
-    private javax.swing.JToggleButton enviarEmail4;
-    private javax.swing.JToggleButton enviarEmail5;
     private javax.swing.JToggleButton enviarWatsapp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
