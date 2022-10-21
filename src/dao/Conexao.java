@@ -12,9 +12,9 @@ import java.sql.ResultSet;
 
 /**
  *
- * @author Diogo
- * Programa para gerir a rotina de cadastro, cobrança, mensagens e organizacao de rotas para clientes de escolar.
- * 
+ * @author Diogo Programa para gerir a rotina de cadastro, cobrança, mensagens e
+ * organizacao de rotas para clientes de escolar.
+ *
  */
 public class Conexao {
 
@@ -53,7 +53,6 @@ public class Conexao {
             stmt = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
             rs = stmt.executeQuery(sql);
-           
 
         } catch (Exception e) {
         }
@@ -65,6 +64,14 @@ public class Conexao {
         String sqlCad = "INSERT INTO pessoasge (nome, idade, pai, cpfpai, mae, cpfmae, endereco, telefonecontato, emailcontato, escola) VALUES ('" + nome + "','" + idade + "','" + pai + "','" + cpfPai + "','" + mae + "','" + cpfMae + "','" + endereco + "','" + telefonecontato + "','" + email + "','" + escola + "')";
         PreparedStatement Stmt = conexao.prepareStatement(sqlCad);
         Stmt.execute(sqlCad);
-    
+
+    }
+
+    //metodo de exclusao a partir do id informado
+    public void delCad(int id) throws SQLException {
+        String sqlCad = "DELETE FROM `bancoge`.`pessoasge` WHERE (`id` = '" + id + "')";
+        PreparedStatement Stmt = conexao.prepareStatement(sqlCad);
+        Stmt.execute(sqlCad);
+
     }
 }

@@ -623,15 +623,11 @@ public class GEHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGravarCadastroActionPerformed
 
     private void btnExcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCadastroActionPerformed
-
-        /* conectar.executaSql("delete from `bancoge`.`pessoasge` WHERE (`id` = '" + Integer.parseInt(txtIdCad.getText()) + "')");
-       
-        
-        melhorar este metodo de exclusao de cadastro.
-        
-        
-        */
-
+        try {
+            conectar.delCad(Integer.parseInt(txtIdCad.getText()));
+        } catch (SQLException ex) {
+            Logger.getLogger(GEHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnExcluirCadastroActionPerformed
 
     /**
