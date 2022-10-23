@@ -36,13 +36,12 @@ public class GEHome extends javax.swing.JFrame {
         modelo = new DefaultListModel();
         listaNomes.setModel(modelo);
         listaNomes1.setModel(modelo);
-        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
-        jTable1.setRowSorter(new TableRowSorter(modelo1));
+        DefaultTableModel modelo1 = (DefaultTableModel) PainelNomes.getModel();
+        PainelNomes.setRowSorter(new TableRowSorter(modelo1));
         readeJtable();
         btnGravarNovoCadastro.setVisible(false);
     }
 
-    //So mais um comentario teste
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,7 +54,7 @@ public class GEHome extends javax.swing.JFrame {
         PainelMaster = new javax.swing.JTabbedPane();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        PainelNomes = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -127,8 +126,8 @@ public class GEHome extends javax.swing.JFrame {
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(1333, 811));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        PainelNomes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        PainelNomes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
@@ -144,13 +143,14 @@ public class GEHome extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        PainelNomes.setColumnSelectionAllowed(true);
+        PainelNomes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                PainelNomesMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(PainelNomes);
+        PainelNomes.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         jLayeredPane1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 1220, 360));
 
@@ -521,9 +521,9 @@ public class GEHome extends javax.swing.JFrame {
         listaNomes.setVisible(false);
     }//GEN-LAST:event_listaNomesMouseReleased
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+    private void PainelNomesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PainelNomesMouseClicked
 
-    }//GEN-LAST:event_jTable1MouseClicked
+    }//GEN-LAST:event_PainelNomesMouseClicked
 
     private void txtNomesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomesMouseClicked
         // TODO add your handling code here:
@@ -586,18 +586,7 @@ public class GEHome extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomes1KeyReleased
 
     private void btnNovoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoCadastroActionPerformed
-        txtNomes1.setText("");
-        txtIdCad.setText("");
-        txtNome2.setText("");
-        txtIdade2.setText("");
-        txtPai2.setText("");
-        txtCpfPai2.setText("");
-        txtMae2.setText("");
-        txtCpfMae2.setText("");
-        txtEndereco2.setText("");
-        txtTelefone2.setText("");
-        txtEmail2.setText("");
-        txtEscola2.setText("");
+        limparCampos();
         btnGravarNovoCadastro.setVisible(true);
     }//GEN-LAST:event_btnNovoCadastroActionPerformed
 
@@ -616,6 +605,7 @@ public class GEHome extends javax.swing.JFrame {
 
     private void PainelMasterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PainelMasterMouseClicked
 
+
     }//GEN-LAST:event_PainelMasterMouseClicked
 
     private void btnGravarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarCadastroActionPerformed
@@ -625,9 +615,11 @@ public class GEHome extends javax.swing.JFrame {
     private void btnExcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCadastroActionPerformed
         try {
             conectar.delCad(Integer.parseInt(txtIdCad.getText()));
+            
         } catch (SQLException ex) {
             Logger.getLogger(GEHome.class.getName()).log(Level.SEVERE, null, ex);
         }
+        limparCampos();
     }//GEN-LAST:event_btnExcluirCadastroActionPerformed
 
     /**
@@ -672,6 +664,7 @@ public class GEHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PainelCadatro;
     private javax.swing.JTabbedPane PainelMaster;
+    private javax.swing.JTable PainelNomes;
     private javax.swing.JToggleButton btnExcluirCadastro;
     private javax.swing.JToggleButton btnGravarCadastro;
     private javax.swing.JToggleButton btnGravarNovoCadastro;
@@ -703,7 +696,6 @@ public class GEHome extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblImagemFundo;
     private javax.swing.JList<String> listaNomes;
     private javax.swing.JList<String> listaNomes1;
@@ -856,7 +848,7 @@ public class GEHome extends javax.swing.JFrame {
     }
 
     public void readeJtable() {
-        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel modelo1 = (DefaultTableModel) PainelNomes.getModel();
         for (PessoaAluno p : reade()) {
             modelo1.addRow(new Object[]{
                 p.getId(),
@@ -875,6 +867,21 @@ public class GEHome extends javax.swing.JFrame {
                 p.Novembro(),
                 p.Dezembro(),});
         }
+    }
+
+    public void limparCampos() {
+        txtNomes1.setText("");
+        txtIdCad.setText("");
+        txtNome2.setText("");
+        txtIdade2.setText("");
+        txtPai2.setText("");
+        txtCpfPai2.setText("");
+        txtMae2.setText("");
+        txtCpfMae2.setText("");
+        txtEndereco2.setText("");
+        txtTelefone2.setText("");
+        txtEmail2.setText("");
+        txtEscola2.setText("");
     }
 
 }
