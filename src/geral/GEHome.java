@@ -27,7 +27,7 @@ public class GEHome extends javax.swing.JFrame {
      */
     Conexao conectar = new Conexao();
     DefaultListModel modelo;
-
+    
     public GEHome() throws ClassNotFoundException, SQLException {
         initComponents();
         conectar.abrirCon();
@@ -40,6 +40,9 @@ public class GEHome extends javax.swing.JFrame {
         PainelNomes.setRowSorter(new TableRowSorter(modelo1));
         readeJtable();
         btnGravarNovoCadastro.setVisible(false);
+        PainelComponentesCadastro.setVisible(false);
+        txtMsgStatusCadastro.setVisible(false);
+        
     }
 
     /**
@@ -84,34 +87,37 @@ public class GEHome extends javax.swing.JFrame {
         listaNomes = new javax.swing.JList<>();
         lblImagemFundo = new javax.swing.JLabel();
         PainelCadatro = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        txtNome2 = new javax.swing.JTextField();
-        txtIdCad = new javax.swing.JTextField();
-        txtPai2 = new javax.swing.JTextField();
-        txtMae2 = new javax.swing.JTextField();
-        txtIdade2 = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        txtEmail2 = new javax.swing.JTextField();
-        txtCpfMae2 = new javax.swing.JTextField();
-        txtEscola2 = new javax.swing.JTextField();
-        txtEndereco2 = new javax.swing.JTextField();
-        txtTelefone2 = new javax.swing.JTextField();
-        txtCpfPai2 = new javax.swing.JTextField();
         btnNovoCadastro = new javax.swing.JToggleButton();
         btnGravarNovoCadastro = new javax.swing.JToggleButton();
         btnExcluirCadastro = new javax.swing.JToggleButton();
         btnGravarCadastro = new javax.swing.JToggleButton();
         listaNomes1 = new javax.swing.JList<>();
         txtNomes1 = new javax.swing.JTextField();
+        PainelComponentesCadastro = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        txtCpfPai2 = new javax.swing.JTextField();
+        txtMae2 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        txtEndereco2 = new javax.swing.JTextField();
+        txtIdCad = new javax.swing.JTextField();
+        txtCpfMae2 = new javax.swing.JTextField();
+        txtNome2 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        txtIdade2 = new javax.swing.JTextField();
+        txtPai2 = new javax.swing.JTextField();
+        txtEmail2 = new javax.swing.JTextField();
+        txtTelefone2 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        txtEscola2 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        txtMsgStatusCadastro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -272,121 +278,6 @@ public class GEHome extends javax.swing.JFrame {
         PainelCadatro.setPreferredSize(new java.awt.Dimension(800, 200));
         PainelCadatro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel23.setText("Id");
-        jLabel23.setAlignmentX(2.0F);
-        PainelCadatro.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, -1));
-
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel24.setText("Idade");
-        jLabel24.setAlignmentX(2.0F);
-        PainelCadatro.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, -1, -1));
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel25.setText("Pai");
-        jLabel25.setAlignmentX(2.0F);
-        PainelCadatro.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, -1, -1));
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel26.setText("Mae");
-        jLabel26.setAlignmentX(2.0F);
-        PainelCadatro.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 360, -1, -1));
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel27.setText("Nome");
-        jLabel27.setAlignmentX(2.0F);
-        PainelCadatro.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
-
-        txtNome2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtNome2.setAlignmentX(2.0F);
-        txtNome2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome2ActionPerformed(evt);
-            }
-        });
-        PainelCadatro.add(txtNome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 270, -1));
-
-        txtIdCad.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtIdCad.setAlignmentX(2.0F);
-        txtIdCad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdCadActionPerformed(evt);
-            }
-        });
-        PainelCadatro.add(txtIdCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 50, -1));
-
-        txtPai2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtPai2.setAlignmentX(2.0F);
-        PainelCadatro.add(txtPai2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 270, -1));
-
-        txtMae2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtMae2.setAlignmentX(2.0F);
-        PainelCadatro.add(txtMae2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 270, -1));
-
-        txtIdade2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtIdade2.setAlignmentX(2.0F);
-        PainelCadatro.add(txtIdade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 80, -1));
-
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel28.setText("CPF");
-        PainelCadatro.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 360, -1, -1));
-
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel29.setText("CPF");
-        PainelCadatro.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 330, -1, -1));
-
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel30.setText("Telefone Contato");
-        jLabel30.setAlignmentX(2.0F);
-        PainelCadatro.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 420, 150, 40));
-
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel31.setText("Endereço");
-        jLabel31.setAlignmentX(2.0F);
-        PainelCadatro.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
-
-        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel32.setText("Escola");
-        jLabel32.setAlignmentX(2.0F);
-        PainelCadatro.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, -1, -1));
-
-        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel33.setText("Email Contato");
-        jLabel33.setAlignmentX(2.0F);
-        PainelCadatro.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, 140, 20));
-
-        txtEmail2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtEmail2.setAlignmentX(2.0F);
-        txtEmail2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmail2ActionPerformed(evt);
-            }
-        });
-        PainelCadatro.add(txtEmail2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 390, 310, 30));
-        PainelCadatro.add(txtCpfMae2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 360, 160, -1));
-
-        txtEscola2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtEscola2.setAlignmentX(2.0F);
-        PainelCadatro.add(txtEscola2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 340, -1));
-
-        txtEndereco2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtEndereco2.setAlignmentX(2.0F);
-        PainelCadatro.add(txtEndereco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 340, -1));
-
-        txtTelefone2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtTelefone2.setAlignmentX(2.0F);
-        PainelCadatro.add(txtTelefone2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 430, 310, 30));
-        PainelCadatro.add(txtCpfPai2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 330, 160, -1));
-
         btnNovoCadastro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnNovoCadastro.setText("Novo Cadastro");
         btnNovoCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -394,7 +285,7 @@ public class GEHome extends javax.swing.JFrame {
                 btnNovoCadastroActionPerformed(evt);
             }
         });
-        PainelCadatro.add(btnNovoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 200, 50));
+        PainelCadatro.add(btnNovoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 200, 50));
 
         btnGravarNovoCadastro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnGravarNovoCadastro.setText("Gravar Novo Cadastro");
@@ -408,7 +299,7 @@ public class GEHome extends javax.swing.JFrame {
                 btnGravarNovoCadastroActionPerformed(evt);
             }
         });
-        PainelCadatro.add(btnGravarNovoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, 230, 80));
+        PainelCadatro.add(btnGravarNovoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 510, 230, 80));
 
         btnExcluirCadastro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnExcluirCadastro.setText("Excluir Cadastro");
@@ -417,7 +308,7 @@ public class GEHome extends javax.swing.JFrame {
                 btnExcluirCadastroActionPerformed(evt);
             }
         });
-        PainelCadatro.add(btnExcluirCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 200, 50));
+        PainelCadatro.add(btnExcluirCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 200, 50));
 
         btnGravarCadastro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnGravarCadastro.setText("Gravar Alterações");
@@ -426,7 +317,7 @@ public class GEHome extends javax.swing.JFrame {
                 btnGravarCadastroActionPerformed(evt);
             }
         });
-        PainelCadatro.add(btnGravarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 200, 50));
+        PainelCadatro.add(btnGravarCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 200, 50));
 
         listaNomes1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -460,6 +351,212 @@ public class GEHome extends javax.swing.JFrame {
             }
         });
         PainelCadatro.add(txtNomes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 540, 40));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel23.setText("Id");
+        jLabel23.setAlignmentX(2.0F);
+
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel30.setText("Telefone Contato");
+        jLabel30.setAlignmentX(2.0F);
+
+        txtMae2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtMae2.setAlignmentX(2.0F);
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel31.setText("Endereço");
+        jLabel31.setAlignmentX(2.0F);
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel33.setText("Email Contato");
+        jLabel33.setAlignmentX(2.0F);
+
+        txtEndereco2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtEndereco2.setAlignmentX(2.0F);
+
+        txtIdCad.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtIdCad.setAlignmentX(2.0F);
+        txtIdCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdCadActionPerformed(evt);
+            }
+        });
+
+        txtNome2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtNome2.setAlignmentX(2.0F);
+        txtNome2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNome2ActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel28.setText("CPF");
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel25.setText("Pai");
+        jLabel25.setAlignmentX(2.0F);
+
+        txtIdade2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtIdade2.setAlignmentX(2.0F);
+
+        txtPai2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtPai2.setAlignmentX(2.0F);
+
+        txtEmail2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtEmail2.setAlignmentX(2.0F);
+        txtEmail2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmail2ActionPerformed(evt);
+            }
+        });
+
+        txtTelefone2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtTelefone2.setAlignmentX(2.0F);
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel27.setText("Nome");
+        jLabel27.setAlignmentX(2.0F);
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel29.setText("CPF");
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel26.setText("Mae");
+        jLabel26.setAlignmentX(2.0F);
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel24.setText("Idade");
+        jLabel24.setAlignmentX(2.0F);
+
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel32.setText("Escola");
+        jLabel32.setAlignmentX(2.0F);
+
+        txtEscola2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtEscola2.setAlignmentX(2.0F);
+
+        javax.swing.GroupLayout PainelComponentesCadastroLayout = new javax.swing.GroupLayout(PainelComponentesCadastro);
+        PainelComponentesCadastro.setLayout(PainelComponentesCadastroLayout);
+        PainelComponentesCadastroLayout.setHorizontalGroup(
+            PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1110, Short.MAX_VALUE)
+            .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                            .addComponent(jLabel23)
+                            .addGap(64, 64, 64)
+                            .addComponent(txtIdCad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                            .addComponent(jLabel27)
+                            .addGap(31, 31, 31)
+                            .addComponent(txtNome2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(jLabel25)
+                            .addGap(17, 17, 17)
+                            .addComponent(txtPai2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel29)
+                            .addGap(20, 20, 20)
+                            .addComponent(txtCpfPai2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                            .addComponent(jLabel24)
+                            .addGap(35, 35, 35)
+                            .addComponent(txtIdade2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(200, 200, 200)
+                            .addComponent(jLabel26)
+                            .addGap(6, 6, 6)
+                            .addComponent(txtMae2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel28)
+                            .addGap(20, 20, 20)
+                            .addComponent(txtCpfMae2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                            .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel31)
+                                .addComponent(jLabel32))
+                            .addGap(7, 7, 7)
+                            .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtEndereco2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtEscola2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(20, 20, 20)
+                            .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtEmail2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        PainelComponentesCadastroLayout.setVerticalGroup(
+            PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+            .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel23)
+                        .addComponent(txtIdCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(5, 5, 5)
+                    .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel27)
+                        .addComponent(txtNome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel25)
+                        .addComponent(txtPai2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel29)
+                        .addComponent(txtCpfPai2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(5, 5, 5)
+                    .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel24)
+                        .addComponent(txtIdade2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel26)
+                        .addComponent(txtMae2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel28)
+                        .addComponent(txtCpfMae2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(5, 5, 5)
+                    .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                            .addComponent(txtEmail2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(txtTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addGroup(PainelComponentesCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                                    .addComponent(jLabel31)
+                                    .addGap(5, 5, 5)
+                                    .addComponent(jLabel32))
+                                .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                                    .addComponent(txtEndereco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(8, 8, 8)
+                                    .addComponent(txtEscola2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(PainelComponentesCadastroLayout.createSequentialGroup()
+                                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        PainelCadatro.add(PainelComponentesCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 1110, 220));
+
+        jLabel12.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel12.setText("PESQUISA");
+        PainelCadatro.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 300, 30));
+
+        txtMsgStatusCadastro.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        PainelCadatro.add(txtMsgStatusCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 820, 120));
 
         PainelMaster.addTab("CADASTROS", PainelCadatro);
 
@@ -549,7 +646,7 @@ public class GEHome extends javax.swing.JFrame {
         }
         txtNomes1.setText(listaNomes1.getSelectedValue());
         listaNomes1.setVisible(false);
-
+        PainelComponentesCadastro.setVisible(true);
 
     }//GEN-LAST:event_listaNomes1MouseClicked
 
@@ -561,6 +658,7 @@ public class GEHome extends javax.swing.JFrame {
         }
         txtNomes1.setText(listaNomes1.getSelectedValue());
         listaNomes1.setVisible(false);
+        PainelComponentesCadastro.setVisible(true);
     }//GEN-LAST:event_listaNomes1MousePressed
 
     private void listaNomes1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaNomes1MouseReleased
@@ -571,6 +669,7 @@ public class GEHome extends javax.swing.JFrame {
         }
         txtNomes1.setText(listaNomes1.getSelectedValue());
         listaNomes1.setVisible(false);
+        PainelComponentesCadastro.setVisible(true);
     }//GEN-LAST:event_listaNomes1MouseReleased
 
     private void txtNomes1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomes1MouseClicked
@@ -583,28 +682,35 @@ public class GEHome extends javax.swing.JFrame {
 
     private void txtNomes1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomes1KeyReleased
         ListaPesquisaCadastro();
+
     }//GEN-LAST:event_txtNomes1KeyReleased
 
     private void btnNovoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoCadastroActionPerformed
         limparCampos();
+        PainelComponentesCadastro.setVisible(true);
         btnGravarNovoCadastro.setVisible(true);
     }//GEN-LAST:event_btnNovoCadastroActionPerformed
 
     private void btnGravarNovoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarNovoCadastroActionPerformed
-
+        
 
     }//GEN-LAST:event_btnGravarNovoCadastroActionPerformed
 
     private void btnGravarNovoCadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGravarNovoCadastroMouseClicked
         try {
             conectar.newCad(txtNome2.getText(), Integer.parseInt(txtIdade2.getText()), txtPai2.getText(), Integer.parseInt(txtCpfPai2.getText()), txtMae2.getText(), Integer.parseInt(txtCpfMae2.getText()), txtEndereco2.getText(), Integer.parseInt(txtTelefone2.getText()), txtEmail2.getText(), txtEscola2.getText());
+            txtMsgStatusCadastro.setVisible(true);
+            txtMsgStatusCadastro.setText("Cadastro Realizado com Sucesso");
         } catch (SQLException ex) {
             Logger.getLogger(GEHome.class.getName()).log(Level.SEVERE, null, ex);
         }
+        limparCampos();
+
     }//GEN-LAST:event_btnGravarNovoCadastroMouseClicked
 
     private void PainelMasterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PainelMasterMouseClicked
-
+        
+        limparCampos();
 
     }//GEN-LAST:event_PainelMasterMouseClicked
 
@@ -615,6 +721,8 @@ public class GEHome extends javax.swing.JFrame {
     private void btnExcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCadastroActionPerformed
         try {
             conectar.delCad(Integer.parseInt(txtIdCad.getText()));
+            txtMsgStatusCadastro.setVisible(true);
+            txtMsgStatusCadastro.setText("Cadastro Excluido com Sucesso");
             
         } catch (SQLException ex) {
             Logger.getLogger(GEHome.class.getName()).log(Level.SEVERE, null, ex);
@@ -663,6 +771,7 @@ public class GEHome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PainelCadatro;
+    private javax.swing.JPanel PainelComponentesCadastro;
     private javax.swing.JTabbedPane PainelMaster;
     private javax.swing.JTable PainelNomes;
     private javax.swing.JToggleButton btnExcluirCadastro;
@@ -674,6 +783,7 @@ public class GEHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -715,6 +825,7 @@ public class GEHome extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdade2;
     private javax.swing.JTextField txtMae;
     private javax.swing.JTextField txtMae2;
+    private javax.swing.JLabel txtMsgStatusCadastro;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNome2;
     private javax.swing.JTextField txtNomes;
@@ -773,7 +884,7 @@ public class GEHome extends javax.swing.JFrame {
         while (conectar.rs.next()) {
             String nome = conectar.rs.getString("nome");
             if (nome.equals(linha)) {
-
+                
                 txtId.setText(conectar.rs.getString("id"));
                 txtNome.setText(conectar.rs.getString("nome"));
                 txtIdade.setText(conectar.rs.getString("idade"));
@@ -785,7 +896,7 @@ public class GEHome extends javax.swing.JFrame {
                 txtTelefone.setText(conectar.rs.getString("telefonecontato"));
                 txtEmail.setText(conectar.rs.getString("emailcontato"));
                 txtEscola.setText(conectar.rs.getString("escola"));
-
+                
             }
         }
     }
@@ -798,7 +909,7 @@ public class GEHome extends javax.swing.JFrame {
         while (conectar.rs.next()) {
             String nome = conectar.rs.getString("nome");
             if (nome.equals(linha)) {
-
+                
                 txtIdCad.setText(conectar.rs.getString("id"));
                 txtNome2.setText(conectar.rs.getString("nome"));
                 txtIdade2.setText(conectar.rs.getString("idade"));
@@ -810,17 +921,17 @@ public class GEHome extends javax.swing.JFrame {
                 txtTelefone2.setText(conectar.rs.getString("telefonecontato"));
                 txtEmail2.setText(conectar.rs.getString("emailcontato"));
                 txtEscola2.setText(conectar.rs.getString("escola"));
-
+                
             }
         }
     }
-
+    
     public List<PessoaAluno> reade() {
-
+        
         List<PessoaAluno> pessoas = new ArrayList<>();
         try {
             conectar.executaSql("select * from pessoasge");
-
+            
             while (conectar.rs.next()) {
                 PessoaAluno ppessoa = new PessoaAluno() {
                 };
@@ -839,14 +950,14 @@ public class GEHome extends javax.swing.JFrame {
                 ppessoa.setOutubro(conectar.rs.getString("outubro"));
                 ppessoa.setNovembro(conectar.rs.getString("novembro"));
                 ppessoa.setDezembro(conectar.rs.getString("dezembro"));
-
+                
                 pessoas.add(ppessoa);
             }
         } catch (Exception e) {
         }
         return pessoas;
     }
-
+    
     public void readeJtable() {
         DefaultTableModel modelo1 = (DefaultTableModel) PainelNomes.getModel();
         for (PessoaAluno p : reade()) {
@@ -868,7 +979,7 @@ public class GEHome extends javax.swing.JFrame {
                 p.Dezembro(),});
         }
     }
-
+    
     public void limparCampos() {
         txtNomes1.setText("");
         txtIdCad.setText("");
@@ -883,5 +994,5 @@ public class GEHome extends javax.swing.JFrame {
         txtEmail2.setText("");
         txtEscola2.setText("");
     }
-
+    
 }
