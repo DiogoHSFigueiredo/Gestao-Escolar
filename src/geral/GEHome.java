@@ -27,8 +27,9 @@ public class GEHome extends javax.swing.JFrame {
      */
     Conexao conectar = new Conexao();
     DefaultListModel modelo;
-    
+
     public GEHome() throws ClassNotFoundException, SQLException {
+
         initComponents();
         conectar.abrirCon();
         listaNomes.setVisible(false);
@@ -42,7 +43,7 @@ public class GEHome extends javax.swing.JFrame {
         btnGravarNovoCadastro.setVisible(false);
         PainelComponentesCadastro.setVisible(false);
         txtMsgStatusCadastro.setVisible(false);
-        
+
     }
 
     /**
@@ -346,6 +347,9 @@ public class GEHome extends javax.swing.JFrame {
             }
         });
         txtNomes1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomes1KeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtNomes1KeyReleased(evt);
             }
@@ -692,7 +696,7 @@ public class GEHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNovoCadastroActionPerformed
 
     private void btnGravarNovoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGravarNovoCadastroActionPerformed
-        
+
 
     }//GEN-LAST:event_btnGravarNovoCadastroActionPerformed
 
@@ -709,7 +713,7 @@ public class GEHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGravarNovoCadastroMouseClicked
 
     private void PainelMasterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PainelMasterMouseClicked
-        
+
         limparCampos();
 
     }//GEN-LAST:event_PainelMasterMouseClicked
@@ -723,12 +727,17 @@ public class GEHome extends javax.swing.JFrame {
             conectar.delCad(Integer.parseInt(txtIdCad.getText()));
             txtMsgStatusCadastro.setVisible(true);
             txtMsgStatusCadastro.setText("Cadastro Excluido com Sucesso");
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(GEHome.class.getName()).log(Level.SEVERE, null, ex);
         }
         limparCampos();
     }//GEN-LAST:event_btnExcluirCadastroActionPerformed
+
+    private void txtNomes1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomes1KeyPressed
+        ListaPesquisaCadastro();
+
+    }//GEN-LAST:event_txtNomes1KeyPressed
 
     /**
      * @param args the command line arguments
@@ -884,7 +893,7 @@ public class GEHome extends javax.swing.JFrame {
         while (conectar.rs.next()) {
             String nome = conectar.rs.getString("nome");
             if (nome.equals(linha)) {
-                
+
                 txtId.setText(conectar.rs.getString("id"));
                 txtNome.setText(conectar.rs.getString("nome"));
                 txtIdade.setText(conectar.rs.getString("idade"));
@@ -896,12 +905,11 @@ public class GEHome extends javax.swing.JFrame {
                 txtTelefone.setText(conectar.rs.getString("telefonecontato"));
                 txtEmail.setText(conectar.rs.getString("emailcontato"));
                 txtEscola.setText(conectar.rs.getString("escola"));
-                
+
             }
         }
     }
     // Metodo para preencher os campos do formulário de Cadastro a partir do nome selecionado no jlist
-
     public void MostraPesqCadastro() throws SQLException {
         String linha = listaNomes1.getSelectedValue();
         List<PessoaAluno> pessoas = new ArrayList<>();
@@ -909,7 +917,7 @@ public class GEHome extends javax.swing.JFrame {
         while (conectar.rs.next()) {
             String nome = conectar.rs.getString("nome");
             if (nome.equals(linha)) {
-                
+
                 txtIdCad.setText(conectar.rs.getString("id"));
                 txtNome2.setText(conectar.rs.getString("nome"));
                 txtIdade2.setText(conectar.rs.getString("idade"));
@@ -921,17 +929,17 @@ public class GEHome extends javax.swing.JFrame {
                 txtTelefone2.setText(conectar.rs.getString("telefonecontato"));
                 txtEmail2.setText(conectar.rs.getString("emailcontato"));
                 txtEscola2.setText(conectar.rs.getString("escola"));
-                
+
             }
         }
     }
-    
+
     public List<PessoaAluno> reade() {
-        
+
         List<PessoaAluno> pessoas = new ArrayList<>();
         try {
             conectar.executaSql("select * from pessoasge");
-            
+
             while (conectar.rs.next()) {
                 PessoaAluno ppessoa = new PessoaAluno() {
                 };
@@ -950,14 +958,14 @@ public class GEHome extends javax.swing.JFrame {
                 ppessoa.setOutubro(conectar.rs.getString("outubro"));
                 ppessoa.setNovembro(conectar.rs.getString("novembro"));
                 ppessoa.setDezembro(conectar.rs.getString("dezembro"));
-                
+
                 pessoas.add(ppessoa);
             }
         } catch (Exception e) {
         }
         return pessoas;
     }
-    
+
     public void readeJtable() {
         DefaultTableModel modelo1 = (DefaultTableModel) PainelNomes.getModel();
         for (PessoaAluno p : reade()) {
@@ -979,7 +987,7 @@ public class GEHome extends javax.swing.JFrame {
                 p.Dezembro(),});
         }
     }
-    
+
     public void limparCampos() {
         txtNomes1.setText("");
         txtIdCad.setText("");
@@ -994,5 +1002,5 @@ public class GEHome extends javax.swing.JFrame {
         txtEmail2.setText("");
         txtEscola2.setText("");
     }
-    
+
 }
