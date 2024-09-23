@@ -4,7 +4,7 @@
  */
 package geral;
 
-import dao.Conexao;
+import dao.ModuloConexao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class TelaCadastro extends javax.swing.JFrame {
      * Creates new form TesteExibicao
      */
     DefaultListModel modelo;
-    Conexao conectar = new Conexao();
+    ModuloConexao conectar = new ModuloConexao();
 
     //construtor da classe
     public TelaCadastro() throws SQLException, ClassNotFoundException {
@@ -76,12 +76,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         enviarEmail = new javax.swing.JToggleButton();
         enviarWatsapp = new javax.swing.JToggleButton();
         btnGravarNovoCadastro = new javax.swing.JButton();
-        lblStatusCad = new javax.swing.JLabel();
         btnExcluirCadastro = new javax.swing.JButton();
         txtNomes = new javax.swing.JTextField();
         listaNomes = new javax.swing.JList<>();
         labelTituloPesquisa = new javax.swing.JLabel();
         btnNovoCadastro = new javax.swing.JButton();
+        lblStatusCad = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -97,7 +97,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 btnHomeTelaCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(btnHomeTelaCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        getContentPane().add(btnHomeTelaCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         painelCadastro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -177,11 +177,11 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         enviarEmail.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         enviarEmail.setText("Enviar E-mail");
-        painelCadastro.add(enviarEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 40, 200, 50));
+        painelCadastro.add(enviarEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 252, 200, 50));
 
         enviarWatsapp.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         enviarWatsapp.setText("Enviar Watsapp");
-        painelCadastro.add(enviarWatsapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 200, 50));
+        painelCadastro.add(enviarWatsapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 252, 200, 50));
 
         btnGravarNovoCadastro.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         btnGravarNovoCadastro.setText("GRAVAR");
@@ -190,10 +190,9 @@ public class TelaCadastro extends javax.swing.JFrame {
                 btnGravarNovoCadastroActionPerformed(evt);
             }
         });
-        painelCadastro.add(btnGravarNovoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 180, 130, 60));
-        painelCadastro.add(lblStatusCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 440, 50));
+        painelCadastro.add(btnGravarNovoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(732, 208, 180, 84));
 
-        getContentPane().add(painelCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 1210, 330));
+        getContentPane().add(painelCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 1130, 310));
 
         btnExcluirCadastro.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         btnExcluirCadastro.setForeground(new java.awt.Color(255, 0, 0));
@@ -203,7 +202,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 btnExcluirCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExcluirCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 140, 50));
+        getContentPane().add(btnExcluirCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 190, 50));
 
         txtNomes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtNomes.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -226,7 +225,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 txtNomesKeyReleased(evt);
             }
         });
-        getContentPane().add(txtNomes, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 680, 60));
+        getContentPane().add(txtNomes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 680, 40));
 
         listaNomes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -239,23 +238,27 @@ public class TelaCadastro extends javax.swing.JFrame {
                 listaNomesMouseReleased(evt);
             }
         });
-        getContentPane().add(listaNomes, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 680, 100));
+        getContentPane().add(listaNomes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 680, 100));
 
-        labelTituloPesquisa.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        labelTituloPesquisa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTituloPesquisa.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        labelTituloPesquisa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelTituloPesquisa.setText("PESQUISA");
-        getContentPane().add(labelTituloPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 680, 60));
+        getContentPane().add(labelTituloPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 680, 40));
 
         btnNovoCadastro.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        btnNovoCadastro.setText("NOVO");
+        btnNovoCadastro.setText("Novo Cadastro");
         btnNovoCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNovoCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNovoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, 50));
+        getContentPane().add(btnNovoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 190, 50));
+
+        lblStatusCad.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        getContentPane().add(lblStatusCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 680, 50));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
@@ -353,7 +356,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             lblStatusCad.setText("CADASTRO REALIZADO COM SUCESSO");
 
         } catch (SQLException ex) {
-            
+
             Logger.getLogger(GEHome.class.getName()).log(Level.SEVERE, null, ex);
             lblStatusCad.setVisible(true);
             lblStatusCad.setText("ERRO NO CADASTRO");
@@ -443,8 +446,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     // Metodo que busca no banco de dados os nomes a partir da pesquisa e preenche o jlist da tela de cadastro.
     public void ListaPesquisaCadastro() {
         try {
-            conectar.executaSql("select * from pessoasge where nome like"
-                    + " '" + txtNomes.getText() + "%' order by nome");
+            conectar.executaSql("select * from pessoasge where nome like" + " '" + txtNomes.getText() + "%' order by nome");
             modelo.removeAllElements();
             int v = 0;
             while (conectar.rs.next() & v < 5) {

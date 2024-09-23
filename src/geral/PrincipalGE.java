@@ -4,7 +4,7 @@
  */
 package geral;
 
-import dao.Conexao;
+import dao.ModuloConexao;
 import static java.awt.AWTEventMulticaster.add;
 import java.awt.BorderLayout;
 import java.sql.SQLException;
@@ -23,7 +23,7 @@ public class PrincipalGE extends javax.swing.JFrame {
     /**
      * Creates new form PrincipalGE
      */
-    Conexao conectar = new Conexao();
+    ModuloConexao conectar = new ModuloConexao();
 
     public PrincipalGE() throws SQLException, ClassNotFoundException {
         initComponents();

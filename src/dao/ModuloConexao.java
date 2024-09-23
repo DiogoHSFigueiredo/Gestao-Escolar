@@ -5,10 +5,7 @@
 package dao;
 
 import java.sql.*;
-import java.sql.DriverManager;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,9 +13,49 @@ import java.sql.ResultSet;
  * organizacao de rotas para clientes de escolar.
  *
  */
-public class Conexao {
+public class ModuloConexao {
+    
+    
 
-// variavel com caminho do banco de dados
+
+//ATENCAO ESTA PARTE CORTADA DO CODIGO DIZ RESPEITO A NOVA IMPLEMENTACAO DA TELA DE LOGIN
+    // A PARTE ABAIXO DIZ RESPEITO AO ANTIGO SISTEMA ELABORADO SEM A TELA DE LOGIN, É NECESSÁRIO MESCLAR AMBAS AS IMPLEMENTACOES
+    //PARA QUE A TELA DE LOGIN E O BANCO DE DADOS FUNCIONE ATUALMENTE UM ESTA EXCLUINDO O OUTRO
+    
+    
+    
+    
+    
+
+    //metodo responsavel por estabelecer a conexao com o banco
+    public static Connection conector() {
+        java.sql.Connection conexao = null;
+        //a linha abaixo "chama" o driver
+        final String driver = "com.mysql.cj.jdbc.Driver";
+        //informacoes referente ao banco
+        final String url = "jdbc:mysql://localhost:3306/bancoge";
+        final String usuario = "root";
+        final String senha = "senhabanco2023@";
+
+        //Estabelecendo conexao com o banco
+        try {
+            Class.forName(driver);
+            conexao = DriverManager.getConnection(url, usuario, senha);
+            return conexao;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+    }
+
+
+
+
+
+    
+  
+  
+    // variavel com caminho do banco de dados
     private final String url = "jdbc:mysql://localhost:3306/bancoge";
     // variavel com o usuario
     private final String usuario = "root";
@@ -28,16 +65,20 @@ public class Conexao {
     private Connection conexao = null;
     public Statement stmt;
     public ResultSet rs;
-// metodo para abrir a conexao
+    //variavel para armazenar o driver
+    private final String driver = "com.mysql.cj.jdbc.Driver";
 
+// metodo para abrir/estabelecer a conexao com o banco
     public Connection abrirCon() throws SQLException, ClassNotFoundException {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(driver);
             conexao = DriverManager.getConnection(url, usuario, senha);
+            return conexao;
+
         } catch (SQLException erro) {
             System.out.println("Erro na Conexao " + erro);
+            return null;
         }
-        return conexao;
     }
 
     public void fecharCon() {
@@ -75,3 +116,4 @@ public class Conexao {
 
     }
 }
+

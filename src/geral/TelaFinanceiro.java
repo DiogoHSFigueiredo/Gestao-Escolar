@@ -4,7 +4,7 @@
  */
 package geral;
 
-import dao.Conexao;
+import dao.ModuloConexao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class TelaFinanceiro extends javax.swing.JFrame {
     /**
      * Creates new form TelaFinanceiro
      */
-    Conexao conectar = new Conexao();
+    ModuloConexao conectar = new ModuloConexao();
 
     //construtor da classe
     public TelaFinanceiro() throws SQLException, ClassNotFoundException {
@@ -86,8 +86,8 @@ public class TelaFinanceiro extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToggleButton1)
-                .addContainerGap(1200, Short.MAX_VALUE))
+                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1216, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(16, Short.MAX_VALUE)
@@ -98,8 +98,8 @@ public class TelaFinanceiro extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToggleButton1)
-                .addContainerGap(701, Short.MAX_VALUE))
+                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(721, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(198, Short.MAX_VALUE)

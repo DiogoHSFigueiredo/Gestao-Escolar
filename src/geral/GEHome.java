@@ -4,7 +4,7 @@
  */
 package geral;
 
-import dao.Conexao;
+import dao.ModuloConexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,7 +25,7 @@ public class GEHome extends javax.swing.JFrame {
     /**
      * Creates new form GEHome
      */
-    Conexao conectar = new Conexao();
+    ModuloConexao conectar = new ModuloConexao();
     DefaultListModel modelo;
 
     public GEHome() throws ClassNotFoundException, SQLException {
@@ -778,6 +778,7 @@ public class GEHome extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PainelCadatro;
     private javax.swing.JPanel PainelComponentesCadastro;
@@ -909,6 +910,7 @@ public class GEHome extends javax.swing.JFrame {
             }
         }
     }
+
     // Metodo para preencher os campos do formulário de Cadastro a partir do nome selecionado no jlist
     public void MostraPesqCadastro() throws SQLException {
         String linha = listaNomes1.getSelectedValue();
